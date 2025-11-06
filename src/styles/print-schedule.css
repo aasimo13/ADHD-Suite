@@ -1,0 +1,571 @@
+/* Print Schedule - ADHD-Optimized Styles */
+
+/* Modal Overlay */
+.print-schedule-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.print-schedule-modal {
+  background: white;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-actions {
+  padding: 24px;
+  border-bottom: 2px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-actions h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Printable Content */
+.printable-content {
+  padding: 40px;
+  background: white;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Print Header */
+.print-header {
+  border-bottom: 4px solid #111827;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.print-title h1 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.print-date {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.print-summary {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.summary-item {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.summary-item strong {
+  color: #111827;
+  margin-right: 6px;
+}
+
+/* ADHD Tips Box */
+.adhd-tips-box {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.adhd-tips-box strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+/* Section Styling */
+.print-section {
+  margin-bottom: 40px;
+  page-break-inside: avoid;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+/* Schedule Timeline */
+.schedule-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.schedule-block {
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 180px 1fr 40px;
+  gap: 16px;
+  align-items: center;
+  background: white;
+  transition: all 0.2s;
+}
+
+.schedule-block.high {
+  border-left: 6px solid #ef4444;
+  background: #fef2f2;
+}
+
+.schedule-block.medium {
+  border-left: 6px solid #f59e0b;
+  background: #fffbeb;
+}
+
+.schedule-block.low {
+  border-left: 6px solid #10b981;
+  background: #f0fdf4;
+}
+
+.block-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.time-separator {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.block-content {
+  flex: 1;
+}
+
+.block-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.block-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.block-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-checkbox input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  accent-color: #6366f1;
+}
+
+.buffer-time {
+  text-align: center;
+  padding: 8px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-style: italic;
+  background: #f9fafb;
+  border-radius: 4px;
+  margin: 4px 0;
+}
+
+/* Tasks Section */
+.tasks-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.task-item {
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  background: white;
+}
+
+.task-item.high {
+  border-left: 6px solid #ef4444;
+  background: #fef2f2;
+}
+
+.task-item.medium {
+  border-left: 6px solid #f59e0b;
+  background: #fffbeb;
+}
+
+.task-item.low {
+  border-left: 6px solid #10b981;
+  background: #f0fdf4;
+}
+
+.task-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.task-checkbox {
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #6366f1;
+  flex-shrink: 0;
+}
+
+.task-title {
+  flex: 1;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+}
+
+.task-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.tag.priority.high {
+  background: #fecaca;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+.tag.priority.medium {
+  background: #fed7aa;
+  color: #92400e;
+  border: 1px solid #f59e0b;
+}
+
+.tag.priority.low {
+  background: #bbf7d0;
+  color: #14532d;
+  border: 1px solid #10b981;
+}
+
+.tag.energy.high {
+  background: #ddd6fe;
+  color: #4c1d95;
+  border: 1px solid #8b5cf6;
+}
+
+.tag.energy.steady {
+  background: #bfdbfe;
+  color: #1e3a8a;
+  border: 1px solid #3b82f6;
+}
+
+.tag.energy.low {
+  background: #e0e7ff;
+  color: #312e81;
+  border: 1px solid #6366f1;
+}
+
+.tag.estimate {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #9ca3af;
+}
+
+/* Subtasks */
+.subtasks-list {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #d1d5db;
+}
+
+.subtask-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.subtask-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #6366f1;
+}
+
+/* Habits Section */
+.habits-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.habit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  background: white;
+  font-weight: 500;
+}
+
+.habit-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #6366f1;
+}
+
+/* Notes Section */
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-item {
+  padding: 12px 16px;
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Blank Notes Section */
+.blank-notes-section {
+  margin-top: 40px;
+}
+
+.blank-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.blank-line {
+  border-bottom: 1px solid #d1d5db;
+  min-height: 30px;
+}
+
+/* Footer */
+.print-footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 2px solid #e5e7eb;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.print-footer p {
+  margin: 8px 0;
+}
+
+.print-attribution {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* Print Media Query */
+@media print {
+  /* Hide modal controls */
+  .print-schedule-overlay,
+  .modal-actions,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset page */
+  body {
+    background: white;
+  }
+
+  .print-schedule-modal {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .printable-content {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Optimize for print */
+  .print-header {
+    border-bottom: 3px solid black;
+  }
+
+  .print-title h1 {
+    color: black;
+  }
+
+  .section-title {
+    color: black;
+    border-bottom: 2px solid black;
+  }
+
+  /* High contrast for print */
+  .schedule-block,
+  .task-item,
+  .habit-item {
+    border: 2px solid black;
+    background: white !important;
+    break-inside: avoid;
+  }
+
+  .schedule-block.high,
+  .task-item.high {
+    border-left: 6px solid black;
+  }
+
+  .schedule-block.medium,
+  .task-item.medium {
+    border-left: 6px solid #666;
+  }
+
+  .schedule-block.low,
+  .task-item.low {
+    border-left: 4px solid #999;
+  }
+
+  /* Print-friendly tags */
+  .tag {
+    background: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+  }
+
+  /* ADHD tips box */
+  .adhd-tips-box {
+    background: white !important;
+    border: 2px solid black;
+    border-left: 6px solid black;
+  }
+
+  /* Ensure checkboxes print */
+  input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+    appearance: checkbox;
+    width: 18px;
+    height: 18px;
+    border: 2px solid black;
+  }
+
+  /* Page breaks */
+  .print-section {
+    page-break-inside: avoid;
+  }
+
+  .schedule-block,
+  .task-item {
+    page-break-inside: avoid;
+  }
+
+  /* Blank lines for writing */
+  .blank-line {
+    border-bottom: 1px solid #666;
+    min-height: 35px;
+  }
+
+  /* Footer */
+  .print-footer {
+    border-top: 2px solid black;
+    color: black;
+  }
+
+  .print-attribution {
+    color: #666;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .print-schedule-modal {
+    max-width: 100%;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .printable-content {
+    padding: 20px;
+  }
+
+  .schedule-block {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .block-time {
+    justify-content: center;
+  }
+
+  .tasks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .habits-checklist {
+    grid-template-columns: 1fr;
+  }
+}

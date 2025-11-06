@@ -5,6 +5,7 @@ import TaskManager from '../components/TaskManager'
 import SchedulePlanner from '../components/SchedulePlanner'
 import NotesPanel from '../components/NotesPanel'
 import HabitTracker from '../components/HabitTracker'
+import PrintSchedule from '../components/PrintSchedule'
 import { useDashboard, getTodayKey } from '../context/DashboardContext'
 import './Dashboard.css'
 
@@ -34,19 +35,22 @@ const Dashboard = () => {
           <h1>ADHD Task Center</h1>
           <p className="date">{dashboardDate}</p>
         </div>
-        <div className="daily-metrics">
-          <div>
-            <span className="metric-value">{completedToday}</span>
-            <span className="metric-label">Focus sprints</span>
+        <div className="header-actions">
+          <div className="daily-metrics">
+            <div>
+              <span className="metric-value">{completedToday}</span>
+              <span className="metric-label">Focus sprints</span>
+            </div>
+            <div>
+              <span className="metric-value">{state.tasks.filter((task) => task.completed).length}</span>
+              <span className="metric-label">Tasks done</span>
+            </div>
+            <div>
+              <span className="metric-value">{Object.values(state.habitLog[today] || {}).filter(Boolean).length}</span>
+              <span className="metric-label">Habits checked</span>
+            </div>
           </div>
-          <div>
-            <span className="metric-value">{state.tasks.filter((task) => task.completed).length}</span>
-            <span className="metric-label">Tasks done</span>
-          </div>
-          <div>
-            <span className="metric-value">{Object.values(state.habitLog[today] || {}).filter(Boolean).length}</span>
-            <span className="metric-label">Habits checked</span>
-          </div>
+          <PrintSchedule />
         </div>
       </header>
 

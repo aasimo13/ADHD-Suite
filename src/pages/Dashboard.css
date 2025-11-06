@@ -27,6 +27,13 @@
   letter-spacing: 0.04em;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
 .daily-metrics {
   display: flex;
   gap: 1.5rem;
