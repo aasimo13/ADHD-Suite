@@ -1,26 +1,27 @@
 # ADHD-Suite
 
-A comprehensive web application designed to help individuals with ADHD manage their daily tasks, time, habits, and thoughts effectively.
+An ADHD task-center dashboard that brings focus, planning, and habit tools together in one place. Everything runs in the browser and saves to local storage, so your data stays on your machine.
+
+**Live demo:** https://aasimo13.github.io/ADHD-Suite/
 
 ## Features
 
-### Core Dashboard Features
+- **Pomodoro Timer** — focus/break intervals to structure deep-work sessions
+- **Daily Planning Prompts** — guided questions to help you set intentions for the day
+- **Task Manager** — track to-dos with priorities and break larger tasks down
+- **Habit Tracker** — build routines and keep an eye on your streaks
+- **Drag-and-Drop Schedule Planner** — block out your day by dragging tasks onto time slots
+- **Printable Schedules** — generate a clean, print-friendly version of your plan for offline use
+- **Quick Notes** — jot down thoughts without leaving the dashboard
 
-- **Pomodoro Timer**: Customizable focus/break intervals with visual and audio notifications
-- **Daily Planning Questions**: Thought-provoking prompts to help structure your day effectively
-- **Task Breakdown Tools**: Break large tasks into manageable sub-tasks
-- **Smart Scheduling**: Drag-and-drop schedule builder with time blocking
-- **Print-Friendly Schedules**: Generate clean, printable daily/weekly schedules for offline use
-- **Task Management**: Organize and track your to-dos with priority levels and deadlines
-- **Habit Tracking**: Build and maintain positive routines with streak tracking
-- **Quick Notes**: Capture thoughts and ideas without losing focus
+All data is stored locally in your browser via `localStorage`. There is no account or server.
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js (v18 or higher)
-- npm or yarn
+- npm
 
 ### Installation
 
@@ -40,19 +41,21 @@ npm run dev
 npm run build
 ```
 
+The production build is output to `dist/`. Pushing to `main` automatically builds and deploys to GitHub Pages via the workflow in `.github/workflows/deploy.yml`.
+
 ## Project Structure
 
 ```
 ADHD-Suite/
-├── public/           # Static assets
 ├── src/
-│   ├── components/   # React components
-│   ├── pages/        # Page components
-│   ├── features/     # Feature modules
-│   ├── hooks/        # Custom React hooks
-│   ├── utils/        # Utility functions
-│   ├── styles/       # Global styles
-│   └── App.jsx       # Main app component
+│   ├── components/   # Feature components (Pomodoro, tasks, habits, scheduler, etc.)
+│   ├── context/      # DashboardContext — shared state + localStorage persistence
+│   ├── pages/        # Dashboard page
+│   ├── styles/       # Global and print styles
+│   ├── App.jsx       # Root component
+│   └── main.jsx      # App entry point
+├── index.html
+├── vite.config.js
 ├── package.json
 └── README.md
 ```
@@ -61,12 +64,12 @@ ADHD-Suite/
 
 - React
 - Vite
-- CSS Modules / Tailwind CSS
+- Plain CSS
+
+## Status
+
+Working. All of the features listed above are implemented, and the app is deployed to GitHub Pages.
 
 ## License
 
-MIT
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Released under the [MIT License](LICENSE).
